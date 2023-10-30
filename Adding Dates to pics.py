@@ -55,9 +55,8 @@ def overlay_date_on_image(image_path, date_taken):
         #The color I use here (255, 165, 0) is orange
         draw.text((x, y), text, fill=(255, 165, 0), font=font)
 
-        #Saving the new image over the old one 
-        img.save(image_path)
-
+        #Saving the new image over the old one, but maintaining all meta data from original pic
+        img.save(image_path, exif=img.info["exif"])
 
 # Defining the folder path where I want to direct this program to look for images to write the dates on 
 folder_path = 'coolio pics'
