@@ -8,7 +8,6 @@ from datetime import datetime
 
 
 # Function to extract the date from a picture's metadata 
-
 def extract_date_taken(image_path):
     try:
         with Image.open(image_path) as img:
